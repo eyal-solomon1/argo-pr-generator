@@ -1,5 +1,8 @@
 name: pr
 
+env:
+  CONFIG_REPO_NAME: argo-pr-generator
+
 on:
   pull_request:
     branches:
