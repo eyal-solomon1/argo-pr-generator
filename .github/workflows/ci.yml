@@ -33,9 +33,7 @@ jobs:
 
       - name: Build and Push Docker Image
         run: |
-          ls
-          pwd
-          docker build -t app:latest .
+          docker build -t app:latest -f ./WebApplication1/Dockerfile
           docker tag app:latest ${{ steps.login-ecr.outputs.registry }}/demo_scripts:${{ github.sha }}
           docker push ${{ steps.login-ecr.outputs.registry }}/demo_scripts:${{ github.sha }}
 
