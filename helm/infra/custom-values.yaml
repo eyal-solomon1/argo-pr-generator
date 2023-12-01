@@ -1,7 +1,0 @@
-cron:
-  enabled: false
-  schedule: "* * * * *"
-  activeDeadlineSeconds: 600
-  securityContext:
-    runAsNonRoot: true
-    runAsUser: 1000
