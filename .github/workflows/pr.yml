@@ -34,7 +34,7 @@ jobs:
       - name: Build and Push Docker Image
         run: |
           docker build -t app:latest -f WebApplication1/Dockerfile .
-          docker tag app:latest ${{ steps.login-ecr.outputs.registry }}/demo_scripts:${{ github.sha }}
+          docker tag app:latest ${{ steps.login-ecr.outputs.registry }}/demo_scripts:${{ github.event.pull_request.head.sha }}
           docker push ${{ steps.login-ecr.outputs.registry }}/demo_scripts:${{ github.sha }}
 
   update-image-tag-in-helm:
